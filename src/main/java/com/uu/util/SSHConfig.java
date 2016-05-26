@@ -1,4 +1,4 @@
-package com.uu.split.utils;
+package com.uu.util;
 
 import java.io.Serializable;
 

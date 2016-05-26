@@ -1,4 +1,4 @@
-package com.uu.split.utils;
+package com.uu.util;
 
 import java.io.File;
 import java.io.InputStream;
@@ -8,6 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
+import org.apache.commons.codec.binary.StringUtils;
+
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.ChannelSftp.LsEntry;
@@ -16,7 +18,6 @@ import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.SftpATTRS;
 import com.jcraft.jsch.SftpException;
-import com.uu.base.util.Tools;
 
 /**
  * SSH ·þÎñ
@@ -63,7 +64,7 @@ public class SSH
 	{
 		if (!channel.isConnected())
 			channel.connect();
-		if (Tools.isEmpty(path))
+		if (path == null)
 			return false;
 
 		ChannelSftp sftp = (ChannelSftp) channel;
@@ -208,7 +209,7 @@ public class SSH
 	 */
 	public static boolean existFile(Channel channel, String directory, String filename) throws Exception
 	{
-		if (Tools.isEmpty(filename))
+		if (filename == null)
 			return false;
 
 		if (!channel.isConnected())
