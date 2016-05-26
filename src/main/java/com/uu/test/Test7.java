@@ -1,6 +1,5 @@
 package com.uu.test;
 
-import org.apache.commons.codec.digest.DigestUtils;
 
 public class Test7
 {
