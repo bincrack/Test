@@ -3,4 +3,4 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:1000/eureka/
 
-foo: update by remote git
+foo: update
